@@ -1,0 +1,4733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Varsha GK | Data Analyst Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   BASIC
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#020617;
+    color:#e5e7eb;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:50px 50px;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+
+:root{
+
+    --cyan:#38bdf8;
+    --blue:#3b82f6;
+    --purple:#8b5cf6;
+    --green:#22c55e;
+
+    --muted:#94a3b8;
+
+    --card:rgba(15,23,42,.78);
+
+    --border:rgba(148,163,184,.16);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.top-nav{
+
+    position:fixed;
+
+    top:18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:1000;
+
+    display:flex;
+
+    gap:5px;
+
+    padding:8px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:50px;
+
+    background:
+        rgba(2,6,23,.85);
+
+    backdrop-filter:blur(18px);
+}
+
+.top-nav a{
+
+    padding:8px 13px;
+
+    border-radius:25px;
+
+    color:#cbd5e1;
+
+    font-size:.8rem;
+
+    white-space:nowrap;
+
+    transition:.3s;
+}
+
+.top-nav a:hover{
+
+    background:
+        rgba(56,189,248,.12);
+
+    color:var(--cyan);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    text-align:center;
+
+    padding:
+        130px 20px 80px;
+
+    overflow:hidden;
+}
+
+.hero-grid{
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    background:
+
+        linear-gradient(
+            rgba(56,189,248,.08) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(56,189,248,.08) 1px,
+            transparent 1px
+        );
+
+    background-size:40px 40px;
+
+    transform:
+        perspective(600px)
+        rotateX(65deg);
+
+    animation:gridMove 10s linear infinite;
+}
+
+@keyframes gridMove{
+
+    to{
+
+        transform:
+            perspective(600px)
+            rotateX(65deg)
+            translateY(40px);
+    }
+}
+
+.hero-glow{
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    filter:blur(120px);
+
+    opacity:.22;
+
+    animation:glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+
+    50%{
+
+        transform:scale(1.25);
+
+        opacity:.32;
+    }
+}
+
+.data-point{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 20px var(--cyan);
+
+    animation:
+        floatPoint 6s ease-in-out infinite;
+}
+
+.point-1{
+    top:20%;
+    left:12%;
+}
+
+.point-2{
+    top:70%;
+    left:18%;
+    animation-delay:1s;
+}
+
+.point-3{
+    top:25%;
+    right:15%;
+    animation-delay:2s;
+}
+
+.point-4{
+    top:75%;
+    right:10%;
+    animation-delay:3s;
+}
+
+@keyframes floatPoint{
+
+    50%{
+
+        transform:
+            translateY(-30px)
+            scale(1.4);
+    }
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border:
+        1px solid
+        rgba(56,189,248,.3);
+
+    border-radius:30px;
+
+    background:
+        rgba(56,189,248,.07);
+
+    color:var(--cyan);
+
+    font-size:.82rem;
+
+    letter-spacing:1px;
+
+    margin-bottom:22px;
+}
+
+.hero h1{
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(3rem,8vw,7rem);
+
+    line-height:1;
+
+    margin-bottom:22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #38bdf8,
+            #8b5cf6,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        gradientMove 7s linear infinite;
+}
+
+@keyframes gradientMove{
+
+    to{
+        background-position:300%;
+    }
+}
+
+.hero h2{
+
+    font-size:
+        clamp(1.2rem,3vw,2rem);
+
+    margin-bottom:18px;
+
+    color:#cbd5e1;
+}
+
+.hero p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:var(--muted);
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-top:32px;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 22px;
+
+    border-radius:11px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+    border:1px solid transparent;
+}
+
+.btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    color:white;
+}
+
+.btn-outline{
+
+    background:
+        rgba(15,23,42,.5);
+
+    border-color:
+        rgba(148,163,184,.3);
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+section{
+
+    width:
+        min(
+            1200px,
+            calc(100% - 40px)
+        );
+
+    margin:auto;
+
+    padding:95px 0;
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.section-title span{
+
+    font-size:.78rem;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:var(--cyan);
+
+    font-weight:700;
+}
+
+.section-title h2{
+
+    font:
+        700 clamp(
+            2rem,
+            5vw,
+            3.3rem
+        )
+        "Space Grotesk";
+
+    margin-top:8px;
+}
+
+.section-title p{
+
+    max-width:650px;
+
+    margin:12px auto;
+
+    color:var(--muted);
+}
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+        translateY(30px);
+
+    transition:.8s;
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:none;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .85fr
+        1.15fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+.about-image{
+
+    max-width:420px;
+
+    margin:auto;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    border:
+        2px solid
+        rgba(56,189,248,.45);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.45);
+
+    animation:
+        imageFloat 5s ease-in-out infinite;
+}
+
+.about-image img{
+
+    width:100%;
+
+    height:540px;
+
+    object-fit:cover;
+}
+
+@keyframes imageFloat{
+
+    50%{
+
+        transform:
+            translateY(-10px);
+    }
+}
+
+.about-content h3{
+
+    font-size:2rem;
+
+    margin-bottom:14px;
+}
+
+.about-content p{
+
+    color:var(--muted);
+
+    margin-bottom:17px;
+}
+
+.skill-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+}
+
+.skill-tag{
+
+    padding:7px 11px;
+
+    border-radius:9px;
+
+    background:
+        rgba(56,189,248,.07);
+
+    border:
+        1px solid
+        rgba(56,189,248,.18);
+
+    font-size:.8rem;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card-grid,
+.skills-grid,
+.certificate-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px,1fr)
+        );
+
+    gap:20px;
+}
+
+.card,
+.skill-card,
+.certificate-card{
+
+    padding:26px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,23,42,.88),
+            rgba(15,23,42,.58)
+        );
+
+    transition:.3s;
+}
+
+.card:hover,
+.skill-card:hover,
+.certificate-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(56,189,248,.32);
+}
+
+.card h3,
+.skill-card h3,
+.certificate-card h3{
+
+    margin-bottom:9px;
+}
+
+.card p,
+.certificate-card p{
+
+    color:var(--muted);
+
+    font-size:.92rem;
+}
+
+.education-card{
+
+    display:grid;
+
+    grid-template-columns:
+        70px 1fr;
+
+    gap:18px;
+}
+
+.education-year{
+
+    font-size:1.25rem;
+
+    font-weight:800;
+
+    color:var(--cyan);
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+========================================================= */
+
+.project-detail-card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    margin-bottom:35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,23,42,.92),
+            rgba(15,23,42,.62)
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 25px 65px
+        rgba(0,0,0,.25);
+}
+
+.project-number{
+
+    font-size:.75rem;
+
+    letter-spacing:3px;
+
+    color:var(--cyan);
+
+    font-weight:800;
+}
+
+.project-content h3{
+
+    font:
+        700 1.8rem
+        "Space Grotesk";
+
+    margin:
+        8px 0 12px;
+}
+
+.project-summary{
+
+    color:var(--muted);
+}
+
+.project-block{
+
+    margin-top:30px;
+}
+
+.project-block h4{
+
+    color:var(--cyan);
+
+    margin-bottom:13px;
+}
+
+.module-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(175px,1fr)
+        );
+
+    gap:10px;
+}
+
+.module{
+
+    padding:12px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    background:
+        rgba(56,189,248,.06);
+
+    border:
+        1px solid
+        rgba(56,189,248,.15);
+
+    font-size:.9rem;
+}
+
+.tech-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+}
+
+.tech-tags span{
+
+    padding:7px 11px;
+
+    border-radius:9px;
+
+    background:
+        rgba(139,92,246,.09);
+
+    border:
+        1px solid
+        rgba(139,92,246,.2);
+
+    color:#ddd6fe;
+
+    font-size:.8rem;
+}
+
+
+/* =========================================================
+   ARCHITECTURE DIAGRAM
+   WHITE TECHNICAL DIAGRAM STYLE
+========================================================= */
+
+.architecture-wrap{
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:#f8fafc;
+
+    color:#111827;
+
+    border:
+        1px solid
+        #cbd5e1;
+
+    overflow-x:auto;
+}
+
+.architecture-title{
+
+    text-align:center;
+
+    color:#111827;
+
+    font:
+        700 1.25rem
+        "Space Grotesk";
+
+    margin:
+        5px 0 18px;
+}
+
+.architecture-canvas{
+
+    min-width:1080px;
+
+    padding:12px;
+}
+
+
+/* GENERAL BOX */
+
+.arch-node{
+
+    min-width:145px;
+
+    padding:15px 11px;
+
+    text-align:center;
+
+    background:#fff;
+
+    border:
+        1.5px solid
+        #334155;
+
+    border-radius:5px;
+
+    font-size:.78rem;
+
+    line-height:1.4;
+}
+
+.arch-node strong{
+
+    display:block;
+
+    font-size:.86rem;
+
+    margin-bottom:4px;
+}
+
+
+/* ARROW */
+
+.arch-arrow{
+
+    font-size:22px;
+
+    padding:
+        0 7px;
+
+    color:#111827;
+}
+
+
+/* GROUP */
+
+.arch-group{
+
+    border:
+        1.5px dashed
+        #64748b;
+
+    padding:18px;
+
+    border-radius:7px;
+
+    background:
+        rgba(255,255,255,.65);
+}
+
+.arch-group-title{
+
+    text-align:center;
+
+    font-weight:800;
+
+    margin-bottom:14px;
+}
+
+
+/* FLOW */
+
+.arch-flow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* DATABASE */
+
+.arch-db{
+
+    width:145px;
+
+    min-height:85px;
+
+    border:
+        1.5px solid
+        #334155;
+
+    border-radius:
+        50% / 25%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:#fff;
+
+    padding:15px;
+
+    position:relative;
+
+    font-size:.76rem;
+}
+
+.arch-db span{
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* DATA ROW */
+
+.food-data-row{
+
+    display:flex;
+
+    gap:18px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:20px;
+}
+
+
+/* SUPPORT */
+
+.arch-support{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:18px;
+
+    padding-top:15px;
+
+    border-top:
+        1px solid
+        #cbd5e1;
+
+    justify-content:center;
+}
+
+.arch-chip{
+
+    border:
+        1px solid
+        #64748b;
+
+    border-radius:4px;
+
+    padding:8px 10px;
+
+    background:#fff;
+
+    font-size:.72rem;
+}
+
+
+/* NOTES */
+
+.arch-notes{
+
+    margin-top:15px;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:12px;
+}
+
+.arch-note{
+
+    border:
+        1.5px dashed
+        #64748b;
+
+    padding:13px;
+
+    border-radius:6px;
+
+    background:#fff;
+
+    font-size:.75rem;
+}
+
+.arch-note h5{
+
+    font-size:.82rem;
+
+    margin-bottom:5px;
+}
+
+
+/* =========================================================
+   PROJECT 1
+========================================================= */
+
+.food-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.food-server{
+
+    flex:1;
+}
+
+.food-note{
+
+    max-width:250px;
+}
+
+
+/* =========================================================
+   PROJECT 2
+========================================================= */
+
+.elearn-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        250px
+        1fr
+        190px;
+
+    gap:18px;
+
+    align-items:start;
+}
+
+
+/* BROWSER */
+
+.browser-box,
+.admin-box,
+.server-box,
+.db-box,
+.chatbot-box-diagram{
+
+    border:
+        1.5px dashed
+        #64748b;
+
+    padding:14px;
+
+    border-radius:7px;
+
+    background:
+        rgba(255,255,255,.7);
+}
+
+.browser-box h5,
+.admin-box h5,
+.server-box h5,
+.db-box h5,
+.chatbot-box-diagram h5{
+
+    text-align:center;
+
+    font-size:.9rem;
+
+    margin-bottom:12px;
+}
+
+.stack{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.e-node{
+
+    border:
+        1.5px solid
+        #334155;
+
+    background:#fff;
+
+    border-radius:5px;
+
+    padding:11px;
+
+    text-align:center;
+
+    font-size:.73rem;
+}
+
+.e-node strong{
+
+    display:block;
+
+    margin-bottom:3px;
+}
+
+
+/* SERVER */
+
+.server-modules{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:8px;
+}
+
+.server-modules .wide{
+
+    grid-column:
+        1 / -1;
+}
+
+
+/* ADMIN */
+
+.admin-box{
+
+    margin-top:18px;
+}
+
+
+/* DATABASE */
+
+.elearn-db .arch-db{
+
+    margin:
+        20px auto;
+}
+
+
+/* CHATBOT */
+
+.chatbot-box-diagram{
+
+    grid-column:
+        1 / -1;
+
+    margin-top:2px;
+}
+
+.chat-flow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.chat-flow .e-node{
+
+    min-width:125px;
+}
+
+.chat-arrow{
+
+    padding:
+        0 6px;
+
+    font-size:20px;
+}
+
+.chat-repo{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:15px;
+}
+
+.chat-bottom{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:10px;
+}
+
+
+/* =========================================================
+   PROJECT OUTPUT SLIDESHOW
+========================================================= */
+
+.project-output-section{
+
+    margin-top:40px;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    background:
+        rgba(2,6,23,.55);
+
+    border:
+        1px solid
+        rgba(56,189,248,.12);
+}
+
+.project-output-header{
+
+    text-align:center;
+
+    margin-bottom:22px;
+}
+
+.project-output-header h4{
+
+    color:var(--cyan);
+
+    font-size:1.25rem;
+}
+
+.project-output-header p{
+
+    color:var(--muted);
+
+    font-size:.88rem;
+}
+
+.output-slide-window{
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    background:#000;
+
+    min-height:430px;
+}
+
+.output-slide{
+
+    display:none;
+
+    animation:
+        slideFade .45s ease;
+}
+
+.output-slide.active{
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr .8fr;
+
+    gap:24px;
+
+    padding:22px;
+
+    align-items:center;
+}
+
+@keyframes slideFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(18px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+    }
+}
+
+.output-slide-image{
+
+    width:100%;
+
+    max-height:520px;
+
+    object-fit:contain;
+
+    border-radius:10px;
+}
+
+.output-slide-info span{
+
+    color:var(--cyan);
+
+    font-size:.72rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.output-slide-info h5{
+
+    font-size:1.45rem;
+
+    margin:
+        7px 0 10px;
+}
+
+.output-slide-info p{
+
+    color:var(--muted);
+
+    font-size:.9rem;
+}
+
+.output-controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:18px;
+}
+
+.output-prev,
+.output-next{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(56,189,248,.3);
+
+    background:
+        rgba(56,189,248,.08);
+
+    color:#fff;
+
+    cursor:pointer;
+}
+
+.output-dots{
+
+    display:flex;
+
+    gap:6px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.output-dot{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#475569;
+
+    cursor:pointer;
+}
+
+.output-dot.active{
+
+    width:23px;
+
+    border-radius:10px;
+
+    background:var(--cyan);
+}
+
+.output-thumbnails{
+
+    display:flex;
+
+    gap:9px;
+
+    overflow-x:auto;
+
+    padding:
+        16px 4px 4px;
+}
+
+.output-thumb{
+
+    flex:
+        0 0 95px;
+
+    height:62px;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:7px;
+
+    overflow:hidden;
+
+    opacity:.5;
+
+    cursor:pointer;
+}
+
+.output-thumb.active{
+
+    border-color:
+        var(--cyan);
+
+    opacity:1;
+}
+
+.output-thumb img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-card h3{
+
+    color:var(--cyan);
+}
+
+.skill-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+}
+
+.skill-list span{
+
+    padding:6px 9px;
+
+    border-radius:8px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    font-size:.8rem;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-container{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:42px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(56,189,248,.07),
+            rgba(139,92,246,.07)
+        );
+
+    border:
+        1px solid
+        var(--border);
+}
+
+.contact-container h3{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+}
+
+.contact-container p{
+
+    color:var(--muted);
+
+    margin-bottom:22px;
+}
+
+.contact-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.contact-link{
+
+    padding:11px 17px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.04);
+}
+
+.contact-link:hover{
+
+    color:var(--cyan);
+
+    border-color:
+        var(--cyan);
+}
+
+
+/* =========================================================
+   VOICE
+========================================================= */
+
+.voice-toggle{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:1001;
+
+    width:54px;
+
+    height:54px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+}
+
+.voice-guide{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:85px;
+
+    z-index:1000;
+
+    width:300px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:
+        rgba(2,6,23,.95);
+
+    border:
+        1px solid
+        rgba(56,189,248,.25);
+
+    transform:
+        translateY(130%);
+
+    transition:.4s;
+}
+
+.voice-guide.show{
+
+    transform:none;
+}
+
+.voice-guide h3{
+
+    color:var(--cyan);
+
+    font-size:1rem;
+
+    margin-bottom:10px;
+}
+
+.voice-controls{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    margin-bottom:10px;
+}
+
+.voice-controls button{
+
+    padding:7px 9px;
+
+    border-radius:7px;
+
+    border:
+        1px solid
+        rgba(148,163,184,.2);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:.72rem;
+}
+
+.voice-guide select{
+
+    width:100%;
+
+    padding:8px;
+
+    border-radius:8px;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    border:
+        1px solid
+        var(--border);
+
+    margin-bottom:7px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    color:#64748b;
+
+    border-top:
+        1px solid
+        rgba(148,163,184,.08);
+
+    font-size:.82rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .output-slide.active{
+
+        grid-template-columns:1fr;
+    }
+
+    .output-slide-info{
+
+        text-align:center;
+    }
+
+    .elearn-layout{
+
+        grid-template-columns:1fr;
+    }
+
+    .chatbot-box-diagram{
+
+        grid-column:auto;
+    }
+}
+
+@media(max-width:600px){
+
+    .top-nav{
+
+        width:
+            calc(100% - 15px);
+
+        overflow-x:auto;
+
+        justify-content:flex-start;
+
+        border-radius:16px;
+    }
+
+    .top-nav a{
+
+        font-size:.68rem;
+
+        padding:7px 9px;
+    }
+
+    section{
+
+        width:
+            calc(100% - 24px);
+
+        padding:70px 0;
+    }
+
+    .hero{
+
+        padding:
+            125px 15px 65px;
+    }
+
+    .about-image img{
+
+        height:430px;
+    }
+
+    .project-detail-card{
+
+        padding:
+            22px 15px;
+    }
+
+    .project-content h3{
+
+        font-size:1.4rem;
+    }
+
+    .project-output-section{
+
+        padding:14px;
+    }
+
+    .output-slide.active{
+
+        padding:12px;
+    }
+
+    .architecture-wrap{
+
+        padding:10px;
+    }
+
+    .voice-guide{
+
+        width:
+            calc(100% - 30px);
+
+        right:15px;
+    }
+
+    .voice-toggle{
+
+        right:15px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="top-nav">
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#education">Education</a>
+
+    <a href="#projects">Projects</a>
+
+    <a href="#skills">Skills</a>
+
+    <a href="#certificates">Certificates</a>
+
+    <a href="#contact">Contact</a>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero" id="home">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow"></div>
+
+    <div class="data-point point-1"></div>
+    <div class="data-point point-2"></div>
+    <div class="data-point point-3"></div>
+    <div class="data-point point-4"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            DATA ANALYST • DATA SCIENCE
+
+        </div>
+
+
+        <h1>
+            Varsha GK
+        </h1>
+
+
+        <h2>
+            Data Analyst & Data Science Graduate
+        </h2>
+
+
+        <p>
+
+            Aspiring Data Scientist from Chennai skilled in
+            Python, SQL, Machine Learning, EDA, Forecasting
+            and Data Visualization. I enjoy building
+            real-world AI and data-driven solutions.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#projects"
+                class="btn btn-primary"
+            >
+                View My Projects
+            </a>
+
+
+            <a
+                href="assets/resume.pdf"
+                class="btn btn-outline"
+                download
+            >
+                Download My Resume
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="section-title reveal">
+
+        <span>
+            About Me
+        </span>
+
+        <h2>
+            Turning Data Into Insights
+        </h2>
+
+        <p>
+            A quick introduction to my background,
+            interests and technical skills.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+        <div class="about-image reveal">
+
+            <img
+                src="varsha.jpg"
+                alt="Varsha GK - Data Analyst"
+            >
+
+        </div>
+
+
+        <div class="about-content reveal">
+
+            <h3>
+                Hello, I'm Varsha 👋
+            </h3>
+
+
+            <p>
+
+                I am a Data Science graduate interested in
+                data analysis, machine learning and
+                artificial intelligence.
+
+            </p>
+
+
+            <p>
+
+                I enjoy working with real-world datasets,
+                discovering useful patterns and transforming
+                data into meaningful insights.
+
+            </p>
+
+
+            <p>
+
+                My interests include data visualization,
+                predictive modelling, forecasting,
+                machine learning and AI-powered applications.
+
+            </p>
+
+
+            <div class="skill-tags">
+
+                <span class="skill-tag">Python</span>
+
+                <span class="skill-tag">SQL</span>
+
+                <span class="skill-tag">Machine Learning</span>
+
+                <span class="skill-tag">EDA</span>
+
+                <span class="skill-tag">Data Visualization</span>
+
+                <span class="skill-tag">Forecasting</span>
+
+                <span class="skill-tag">AI</span>
+
+                <span class="skill-tag">NLP</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="section-title reveal">
+
+        <span>
+            Education
+        </span>
+
+        <h2>
+            Academic Background
+        </h2>
+
+    </div>
+
+
+    <div class="card-grid">
+
+
+        <div class="card education-card reveal">
+
+            <div class="education-year">
+                PG
+            </div>
+
+            <div>
+
+                <h3>
+                    M.Sc Data Science
+                </h3>
+
+                <p>
+                    Data Science specialization with focus
+                    on analytics, machine learning and AI.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card education-card reveal">
+
+            <div class="education-year">
+                UG
+            </div>
+
+            <div>
+
+                <h3>
+                    B.Sc Computer Science
+                </h3>
+
+                <p>
+                    Computer Science background with
+                    programming and software development.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card education-card reveal">
+
+            <div class="education-year">
+                XII
+            </div>
+
+            <div>
+
+                <h3>
+                    Higher Secondary
+                </h3>
+
+                <p>
+                    Higher secondary education.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card education-card reveal">
+
+            <div class="education-year">
+                X
+            </div>
+
+            <div>
+
+                <h3>
+                    Secondary School
+                </h3>
+
+                <p>
+                    Secondary school education.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+    <div class="section-title reveal">
+
+        <span>
+            My Work
+        </span>
+
+        <h2>
+            Featured Projects
+        </h2>
+
+        <p>
+            Detailed architecture diagrams and project
+            outputs.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         PROJECT 01
+    ================================================== -->
+
+    <article class="project-detail-card reveal">
+
+
+        <div class="project-number">
+            PROJECT 01
+        </div>
+
+
+        <div class="project-content">
+
+
+            <h3>
+                Food Recognition and Calorie Estimation
+                using Deep Learning
+            </h3>
+
+
+            <p class="project-summary">
+
+                A deep learning application that accepts
+                food images, processes the image, recognizes
+                the food using CNN/ResNet and provides
+                calorie information through a Django web
+                application.
+
+            </p>
+
+
+            <!-- =========================================
+                 ARCHITECTURE
+            ========================================== -->
+
+            <div class="project-block">
+
+                <h4>
+                    System Architecture
+                </h4>
+
+
+                <div class="architecture-wrap">
+
+
+                    <div class="architecture-title">
+
+                        Project 1: Food Recognition and
+                        Calorie Estimation using Deep Learning
+
+                    </div>
+
+
+                    <div class="architecture-canvas">
+
+
+                        <div class="food-top">
+
+
+                            <!-- USER -->
+
+                            <div class="arch-node">
+
+                                <strong>
+                                    USER
+                                </strong>
+
+                                Uploads food image
+
+                            </div>
+
+
+                            <div class="arch-arrow">
+                                →
+                            </div>
+
+
+                            <!-- IMAGE -->
+
+                            <div class="arch-node">
+
+                                <strong>
+                                FoodImageInput
+                                </strong>
+
+                                JPG / PNG
+
+                            </div>
+
+
+                            <div class="arch-arrow">
+                                →
+                            </div>
+
+
+                            <!-- WEB -->
+
+                            <div class="arch-node">
+
+                                <strong>
+                                    Web Interface
+                                </strong>
+
+                                Django
+
+                            </div>
+
+
+                            <div class="arch-arrow">
+                                →
+                            </div>
+
+
+                            <!-- SERVER -->
+
+                            <div class="arch-group food-server">
+
+
+                                <div class="arch-group-title">
+
+                                    Django / Python
+                                    Application Server
+
+                                </div>
+
+
+                                <div class="arch-flow">
+
+
+                                    <!-- PREPROCESSING -->
+
+                                    <div class="arch-node">
+
+                                        <strong>
+                                            Image
+                                            Preprocessing
+                                        </strong>
+
+                                        Resize<br>
+
+                                        Normalize<br>
+
+                                        Augment
+
+                                    </div>
+
+
+                                    <div class="arch-arrow">
+                                        →
+                                    </div>
+
+
+                                    <!-- MODEL -->
+
+                                    <div class="arch-node">
+
+                                        <strong>
+                                            Deep Learning
+                                            Model
+                                        </strong>
+
+                                        CNN / ResNet
+
+                                    </div>
+
+
+                                    <div class="arch-arrow">
+                                        →
+                                    </div>
+
+
+                                    <!-- RECOGNITION -->
+
+                                    <div class="arch-node">
+
+                                        <strong>
+                                            Food Recognition
+                                        </strong>
+
+                                        Classification
+
+                                    </div>
+
+
+                                    <div class="arch-arrow">
+                                        →
+                                    </div>
+
+
+                                    <!-- CALORIE -->
+
+                                    <div class="arch-node">
+
+                                        <strong>
+                                            Calorie
+                                            Estimation
+                                        </strong>
+
+                                        Nutrition lookup
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- DATABASES -->
+
+                                <div class="food-data-row">
+
+
+                                    <div class="arch-db">
+
+                                        <span>
+
+                                            <strong>
+                                                Food Dataset
+                                            </strong>
+
+                                            <br>
+
+                                            Food Images
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="arch-db">
+
+                                        <span>
+
+                                            <strong>
+                                                Trained Model
+                                                Repository
+                                            </strong>
+
+                                            <br>
+
+                                            CNN / ResNet
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="arch-db">
+
+                                        <span>
+
+                                            <strong>
+                                                Calorie
+                                                Information
+                                            </strong>
+
+                                            <br>
+
+                                            Nutrition Data
+
+                                        </span>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- TECHNOLOGIES -->
+
+                                <div class="arch-support">
+
+
+                                    <div class="arch-chip">
+                                        Python
+                                    </div>
+
+
+                                    <div class="arch-chip">
+                                        Django
+                                    </div>
+
+
+                                    <div class="arch-chip">
+                                        Computer Vision
+                                    </div>
+
+
+                                    <div class="arch-chip">
+                                        CNN
+                                    </div>
+
+
+                                    <div class="arch-chip">
+                                        ResNet
+                                    </div>
+
+
+                                    <div class="arch-chip">
+                                        ~92% Accuracy
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="arch-arrow">
+                                →
+                            </div>
+
+
+                            <!-- RESULT -->
+
+                            <div class="arch-node">
+
+                                <strong>
+                                    Result /
+                                    Web Output
+                                </strong>
+
+                                Food name +
+                                calorie information
+
+                            </div>
+
+
+                            <div class="arch-arrow">
+                                →
+                            </div>
+
+
+                            <!-- USER -->
+
+                            <div class="arch-node">
+
+                                <strong>
+                                    USER
+                                </strong>
+
+                                Views result
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- NOTES -->
+
+                        <div class="arch-notes">
+
+
+                            <div class="arch-note">
+
+                                <h5>
+                                    Processing Flow
+                                </h5>
+
+                                Image →
+                                preprocessing →
+                                CNN / ResNet →
+                                food classification →
+                                calorie estimation →
+                                web result.
+
+                            </div>
+
+
+                            <div class="arch-note">
+
+                                <h5>
+                                    Limitations
+                                </h5>
+
+                                Image quality,
+                                food appearance and
+                                similar food classes
+                                can affect recognition.
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+           
+    </article>
+
+
+
+    <!-- =================================================
+         PROJECT 02
+    ================================================== -->
+
+    <article class="project-detail-card reveal">
+
+
+        <div class="project-number">
+            PROJECT 02
+        </div>
+
+
+        <div class="project-content">
+
+
+            <h3>
+                Online E-Learning Platform with
+                Integrated AI Chatbot
+            </h3>
+
+
+            <p class="project-summary">
+
+                A web-based e-learning platform providing
+                registration, courses, enrollment, videos,
+                quizzes, progress tracking, achievements,
+                payment, administration and an integrated
+                AI chatbot.
+
+            </p>
+
+
+            <!-- =========================================
+                 ARCHITECTURE
+            ========================================== -->
+
+            <div class="project-block">
+
+                <h4>
+                    System Architecture
+                </h4>
+
+
+                <div class="architecture-wrap">
+
+
+                    <div class="architecture-title">
+
+                        Project 2: Online E-Learning Platform
+                        with Integrated AI Chatbot
+
+                    </div>
+
+
+                    <div class="architecture-canvas">
+
+
+                        <div class="elearn-layout">
+
+
+                            <!-- =================================
+                                 USER + ADMIN
+                            ================================== -->
+
+                            <div>
+
+
+                                <!-- WEB BROWSER -->
+
+                                <div class="browser-box">
+
+
+                                    <h5>
+                                        Web Browser
+                                    </h5>
+
+
+                                    <div class="stack">
+
+
+                                        <div class="e-node">
+
+                                            <strong>
+                                                USERS
+                                            </strong>
+
+                                            Learners
+
+                                        </div>
+
+
+                                        <div class="e-node">
+
+                                            <strong>
+                                                Frontend
+                                                Web Client
+                                            </strong>
+
+                                            HTML5<br>
+                                            CSS3<br>
+                                            JavaScript<br>
+                                            Bootstrap
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!-- ADMIN -->
+
+                                <div class="admin-box">
+
+
+                                    <h5>
+                                        Admin Access
+                                    </h5>
+
+
+                                    <div class="stack">
+
+
+                                        <div class="e-node">
+
+                                            <strong>
+                                                ADMIN
+                                            </strong>
+
+                                        </div>
+
+
+                                        <div class="e-node">
+
+                                            <strong>
+                                                Admin Browser
+                                            </strong>
+
+                                        </div>
+
+
+                                        <div class="e-node">
+
+                                            <strong>
+                                                Admin Dashboard
+                                            </strong>
+
+                                        </div>
+
+
+                                        <div class="e-node">
+
+                                            <strong>
+                                                Admin Category /
+                                                Course Management
+                                            </strong>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- =================================
+                                 APPLICATION SERVER
+                            ================================== -->
+
+                            <div>
+
+
+                                <div class="server-box">
+
+
+                                    <h5>
+
+                                        Application Server
+                                        <br>
+
+                                        PHP / Server-Side
+                                        Web Application
+
+                                    </h5>
+
+
+                                    <div class="server-modules">
+
+
+                                        <div class="e-node">
+                                            User Management
+                                        </div>
+
+
+                                        <div class="e-node">
+                                            Quizzes
+                                        </div>
+
+
+                                        <div class="e-node">
+                                            Course Management
+                                        </div>
+
+
+                                        <div class="e-node">
+                                            Progress Tracking
+                                        </div>
+
+
+                                        <div class="e-node">
+                                            Enrollment
+                                        </div>
+
+
+                                        <div class="e-node">
+                                            Achievements
+                                        </div>
+
+
+                                        <div class="e-node">
+                                            Videos / Lessons
+                                        </div>
+
+
+                                        <div class="e-node">
+                                            Contact
+                                        </div>
+
+
+                                        <div class="e-node wide">
+                                            Payment Module
+                                        </div>
+
+
+                                        <div class="e-node wide">
+                                            Admin Module
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- =================================
+                                 DATABASE
+                            ================================== -->
+
+                            <div class="db-box">
+
+
+                                <h5>
+                                    Database
+                                </h5>
+
+
+                                <div class="arch-db">
+
+
+                                    <span>
+
+                                        <strong>
+                                            MySQL
+                                        </strong>
+
+                                        <br>
+
+                                        Users
+                                        <br>
+
+                                        Courses
+                                        <br>
+
+                                        Enrollment
+                                        <br>
+
+                                        Progress
+                                        <br>
+
+                                        Admin Data
+
+                                    </span>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- =================================
+                                 AI CHATBOT
+                            ================================== -->
+
+                            <div class="chatbot-box-diagram">
+
+
+                                <h5>
+                                    AI CHATBOT
+                                </h5>
+
+
+                                <div class="chat-flow">
+
+
+                                    <div class="e-node">
+
+                                        <strong>
+                                            User Question
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="chat-arrow">
+                                        →
+                                    </div>
+
+
+                                    <div class="e-node">
+
+                                        <strong>
+                                            NLP Processing
+                                        </strong>
+
+                                        NLP /
+                                        NLTK /
+                                        SpaCy
+
+                                    </div>
+
+
+                                    <div class="chat-arrow">
+                                        →
+                                    </div>
+
+
+                                    <div class="e-node">
+
+                                        <strong>
+                                            Intent
+                                            Recognition
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="chat-arrow">
+                                        →
+                                    </div>
+
+
+                                    <div class="e-node">
+
+                                        <strong>
+                                            Retrieve
+                                            Information
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="chat-arrow">
+                                        →
+                                    </div>
+
+
+                                    <div class="e-node">
+
+                                        <strong>
+                                            AI Response
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="chat-arrow">
+                                        →
+                                    </div>
+
+
+                                    <div class="e-node">
+
+                                        <strong>
+                                            Web Client
+                                        </strong>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- KNOWLEDGE -->
+
+                                <div class="chat-repo">
+
+
+                                    <div class="arch-db">
+
+
+                                        <span>
+
+                                            <strong>
+                                                Content /
+                                                Knowledge
+                                                Repository
+                                            </strong>
+
+                                            <br>
+
+                                            Courses
+                                            <br>
+
+                                            FAQs
+                                            <br>
+
+                                            Learning Data
+
+                                        </span>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- AI TECHNOLOGIES -->
+
+                                <div class="chat-bottom">
+
+
+                                    <div
+                                        class="arch-note"
+                                        style="max-width:250px"
+                                    >
+
+                                        <h5>
+                                            AI Technologies
+                                        </h5>
+
+                                        NLP • NLTK •
+                                        SpaCy •
+                                        TensorFlow •
+                                        Transformers
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 EXPLANATION
+            ========================================== -->
+
+            <div class="project-block">
+
+
+                <h4>
+                    How the Platform Works
+                </h4>
+
+
+                <p>
+
+                    Users access the e-learning platform
+                    through a web browser. The frontend
+                    provides the user interface for
+                    registration, login, courses,
+                    enrollment and learning.
+
+                    The PHP server-side application
+                    handles the main platform operations.
+
+                    MySQL stores user, course, enrollment,
+                    progress and administrative data.
+
+                    The admin can access the dashboard
+                    to manage categories and courses.
+
+                    The AI chatbot receives a user
+                    question, processes it using NLP,
+                    identifies the user's intent,
+                    retrieves relevant information and
+                    returns an AI response.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- =========================================
+                 MODULES
+            ========================================== -->
+
+            <div class="project-block">
+
+
+                <h4>
+                    Main Modules
+                </h4>
+
+
+                <div class="module-grid">
+
+
+                    <div class="module">
+                        User Management
+                    </div>
+
+
+                    <div class="module">
+                        Course Management
+                    </div>
+
+
+                    <div class="module">
+                        Enrollment
+                    </div>
+
+
+                    <div class="module">
+                        Videos / Lessons
+                    </div>
+
+
+                    <div class="module">
+                        Quizzes
+                    </div>
+
+
+                    <div class="module">
+                        Progress Tracking
+                    </div>
+
+
+                    <div class="module">
+                        Achievements
+                    </div>
+
+
+                    <div class="module">
+                        Payment
+                    </div>
+
+
+                    <div class="module">
+                        Admin Module
+                    </div>
+
+
+                    <div class="module">
+                        AI Chatbot
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 TECHNOLOGIES
+            ========================================== -->
+
+            <div class="project-block">
+
+
+                <h4>
+                    Technologies Used
+                </h4>
+
+
+                <div class="tech-tags">
+
+
+                    <span>
+                        PHP
+                    </span>
+
+
+                    <span>
+                        MySQL
+                    </span>
+
+
+                    <span>
+                        HTML5
+                    </span>
+
+
+                    <span>
+                        CSS3
+                    </span>
+
+
+                    <span>
+                        JavaScript
+                    </span>
+
+
+                    <span>
+                        Bootstrap
+                    </span>
+
+
+                    <span>
+                        NLP
+                    </span>
+
+
+                    <span>
+                        NLTK
+                    </span>
+
+
+                    <span>
+                        SpaCy
+                    </span>
+
+
+                    <span>
+                        AI Chatbot
+                    </span>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 FEATURES
+            ========================================== -->
+
+            <div class="project-block">
+
+
+                <h4>
+                    Key Features
+                </h4>
+
+
+                <p class="project-summary">
+
+                    Registration • Login • Courses •
+                    Enrollment • Videos • Quizzes •
+                    Progress Tracking • Achievements •
+                    Payment • Admin Panel • AI Chatbot
+
+                </p>
+
+
+            </div>
+
+
+            <!-- =========================================
+                 LEARNING
+            ========================================== -->
+
+            <div class="project-block">
+
+
+                <h4>
+                    What I Learned
+                </h4>
+
+
+                <p>
+
+                    Learned web application development,
+                    database integration, user and course
+                    management, server-side processing,
+                    NLP-based chatbot processing and
+                    AI-supported learning workflows.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 PROJECT OUTPUT
+            ========================================== -->
+
+            <div class="project-output-section">
+
+
+                <div class="project-output-header">
+
+                    <h4>
+                        Project Output
+                    </h4>
+
+                    <p>
+                        Screenshots of the e-learning
+                        platform. Slides change every
+                        2 seconds.
+                    </p>
+
+                </div>
+
+
+                <div class="output-slide-window">
+
+
+                    <!-- 01 -->
+
+                    <div class="output-slide active">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/01-home.png"
+                            alt="Home Page"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 01
+                            </span>
+
+                            <h5>
+                                Home Page
+                            </h5>
+
+                            <p>
+
+                                Main landing page where
+                                users can explore the
+                                e-learning platform.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 02 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/02-signup.png"
+                            alt="Signup Page"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 02
+                            </span>
+
+                            <h5>
+                                Sign Up
+                            </h5>
+
+                            <p>
+                                New users can create
+                                an account.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 03 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/03-signin.png"
+                            alt="Sign In Page"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 03
+                            </span>
+
+                            <h5>
+                                Sign In
+                            </h5>
+
+                            <p>
+                                Registered users can
+                                sign in to the platform.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 04 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/04-profile.png"
+                            alt="Profile Page"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 04
+                            </span>
+
+                            <h5>
+                                User Profile
+                            </h5>
+
+                            <p>
+                                Users can view their
+                                profile information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 05 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/05-courses.png"
+                            alt="Courses Page"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 05
+                            </span>
+
+                            <h5>
+                                Courses
+                            </h5>
+
+                            <p>
+                                Users can browse
+                                available courses.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 06 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/06-course-details.png"
+                            alt="Course Details"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 06
+                            </span>
+
+                            <h5>
+                                Course Details
+                            </h5>
+
+                            <p>
+                                Detailed information
+                                about a selected course.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 07 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/07-payment.png"
+                            alt="Payment"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 07
+                            </span>
+
+                            <h5>
+                                Payment
+                            </h5>
+
+                            <p>
+                                Course payment interface.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 08 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/08-lesson.png"
+                            alt="Lesson"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 08
+                            </span>
+
+                            <h5>
+                                Lesson Page
+                            </h5>
+
+                            <p>
+                                Learners access course
+                                lessons and resources.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 09 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/09-achievements.png"
+                            alt="Achievements"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 09
+                            </span>
+
+                            <h5>
+                                Achievements
+                            </h5>
+
+                            <p>
+                                Displays learner
+                                achievements.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 10 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/10-contact.png"
+                            alt="Contact"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 10
+                            </span>
+
+                            <h5>
+                                Contact
+                            </h5>
+
+                            <p>
+                                Contact interface for
+                                platform users.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 11 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/11-admin-dashboard.png"
+                            alt="Admin Dashboard"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 11
+                            </span>
+
+                            <h5>
+                                Admin Dashboard
+                            </h5>
+
+                            <p>
+                                Administrator dashboard
+                                for platform management.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 12 -->
+
+                    <div class="output-slide">
+
+                        <img
+                            class="output-slide-image"
+                            src="assets/project-output/12-admin-category.png"
+                            alt="Admin Category"
+                        >
+
+                        <div class="output-slide-info">
+
+                            <span>
+                                Page 12
+                            </span>
+
+                            <h5>
+                                Admin Category
+                            </h5>
+
+                            <p>
+                                Admin can manage course
+                                categories and content.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="output-controls">
+
+                    <button
+                        class="output-prev"
+                        onclick="changeSlide(-1)"
+                    >
+                        ❮
+                    </button>
+
+
+                    <div
+                        class="output-dots"
+                        id="outputDots"
+                    ></div>
+
+
+                    <button
+                        class="output-next"
+                        onclick="changeSlide(1)"
+                    >
+                        ❯
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="output-thumbnails"
+                    id="outputThumbnails"
+                ></div>
+
+
+            </div>
+
+
+        </div>
+
+    </article>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="section-title reveal">
+
+        <span>
+            Skills
+        </span>
+
+        <h2>
+            Technical Skills
+        </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card reveal">
+
+            <h3>
+                Programming
+            </h3>
+
+            <div class="skill-list">
+
+                <span>Python</span>
+                <span>SQL</span>
+                <span>PHP</span>
+                <span>JavaScript</span>
+                <span>HTML</span>
+                <span>CSS</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <h3>
+                Data Science
+            </h3>
+
+            <div class="skill-list">
+
+                <span>Machine Learning</span>
+                <span>EDA</span>
+                <span>Forecasting</span>
+                <span>Data Cleaning</span>
+                <span>Feature Engineering</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <h3>
+                Visualization
+            </h3>
+
+            <div class="skill-list">
+
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+                <span>Power BI</span>
+                <span>Dashboards</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <h3>
+                AI & NLP
+            </h3>
+
+            <div class="skill-list">
+
+                <span>NLP</span>
+                <span>NLTK</span>
+                <span>SpaCy</span>
+                <span>TensorFlow</span>
+                <span>Transformers</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <h3>
+                Database
+            </h3>
+
+            <div class="skill-list">
+
+                <span>MySQL</span>
+                <span>SQLite</span>
+                <span>Database Management</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <h3>
+                Tools
+            </h3>
+
+            <div class="skill-list">
+
+                <span>Jupyter</span>
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>VS Code</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATES
+===================================================== -->
+
+<section id="certificates">
+
+    <div class="section-title reveal">
+
+        <span>
+            Certifications
+        </span>
+
+        <h2>
+            Certificates & Learning
+        </h2>
+
+    </div>
+
+
+    <div class="certificate-grid">
+
+
+        <div class="certificate-card reveal">
+
+            <h3>
+                Data Science
+            </h3>
+
+            <p>
+                Data science and analytics learning.
+            </p>
+
+        </div>
+
+
+        <div class="certificate-card reveal">
+
+            <h3>
+                Python
+            </h3>
+
+            <p>
+                Python programming and data analysis.
+            </p>
+
+        </div>
+
+
+        <div class="certificate-card reveal">
+
+            <h3>
+                Machine Learning
+            </h3>
+
+            <p>
+                Machine learning concepts and
+                practical model development.
+            </p>
+
+        </div>
+
+
+        <div class="certificate-card reveal">
+
+            <h3>
+                SQL
+            </h3>
+
+            <p>
+                SQL and database management skills.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="section-title reveal">
+
+        <span>
+            Contact
+        </span>
+
+        <h2>
+            Let's Connect
+        </h2>
+
+    </div>
+
+
+    <div class="contact-container reveal">
+
+        <h3>
+            Interested in working together?
+        </h3>
+
+
+        <p>
+
+            Feel free to connect with me for
+            opportunities, projects and collaborations.
+
+        </p>
+
+
+        <div class="contact-links">
+
+
+            <a
+                class="contact-link"
+                href="mailto:varshagk1802@gmail.com"
+            >
+                📧 Email
+            </a>
+
+
+            <a
+                class="contact-link"
+                href="https://www.linkedin.com/in/varsha-gk-92b161425/"
+                target="_blank"
+            >
+                💼 LinkedIn
+            </a>
+
+
+            <a
+                class="contact-link"
+                href="https://github.com/varshagk1"
+                target="_blank"
+            >
+                🐙 GitHub
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VOICE GUIDE
+===================================================== -->
+
+<button
+    class="voice-toggle"
+    id="voiceToggle"
+>
+    🔊
+</button>
+
+
+<div
+    class="voice-guide"
+    id="voiceGuide"
+>
+
+    <h3>
+        🎙 Portfolio Voice Guide
+    </h3>
+
+
+    <div class="voice-controls">
+
+        <button onclick="playPortfolioVoice()">
+            ▶ Play Full
+        </button>
+
+        <button onclick="pauseVoice()">
+            ⏸ Pause
+        </button>
+
+        <button onclick="resumeVoice()">
+            ▶ Resume
+        </button>
+
+        <button onclick="stopVoice()">
+            ⏹ Stop
+        </button>
+
+    </div>
+
+
+    <select id="voiceSelect">
+
+        <option value="">
+            Default Voice
+        </option>
+
+    </select>
+
+
+    <label
+        style="
+            display:block;
+            color:#94a3b8;
+            font-size:.72rem;
+            margin-bottom:4px;
+        "
+    >
+        Voice Speed
+    </label>
+
+
+    <input
+        type="range"
+        id="voiceRate"
+        min="0.6"
+        max="1.4"
+        step="0.1"
+        value="1"
+        style="width:100%"
+    >
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Varsha GK • Data Analyst Portfolio
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(entry.isIntersecting){
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+revealElements.forEach(
+    element =>
+        revealObserver.observe(element)
+);
+
+
+/* =====================================================
+   SLIDESHOW
+===================================================== */
+
+const slides =
+    document.querySelectorAll(
+        ".output-slide"
+    );
+
+
+const dotsContainer =
+    document.getElementById(
+        "outputDots"
+    );
+
+
+const thumbnailsContainer =
+    document.getElementById(
+        "outputThumbnails"
+    );
+
+
+let currentSlide = 0;
+
+
+/* CREATE DOTS + THUMBNAILS */
+
+slides.forEach(
+    (slide,index) => {
+
+
+        const dot =
+            document.createElement(
+                "span"
+            );
+
+
+        dot.className =
+            "output-dot";
+
+
+        if(index === 0){
+
+            dot.classList.add(
+                "active"
+            );
+
+        }
+
+
+        dot.onclick = () => {
+
+            showSlide(index);
+
+        };
+
+
+        dotsContainer.appendChild(
+            dot
+        );
+
+
+        const thumbnail =
+            document.createElement(
+                "div"
+            );
+
+
+        thumbnail.className =
+            "output-thumb";
+
+
+        if(index === 0){
+
+            thumbnail.classList.add(
+                "active"
+            );
+
+        }
+
+
+        const sourceImage =
+            slide.querySelector(
+                "img"
+            );
+
+
+        const thumbnailImage =
+            document.createElement(
+                "img"
+            );
+
+
+        thumbnailImage.src =
+            sourceImage.src;
+
+
+        thumbnailImage.alt =
+            sourceImage.alt;
+
+
+        thumbnail.appendChild(
+            thumbnailImage
+        );
+
+
+        thumbnail.onclick = () => {
+
+            showSlide(index);
+
+        };
+
+
+        thumbnailsContainer.appendChild(
+            thumbnail
+        );
+
+    }
+);
+
+
+/* SHOW SLIDE */
+
+function showSlide(index){
+
+
+    if(index >= slides.length){
+
+        index = 0;
+
+    }
+
+
+    if(index < 0){
+
+        index =
+            slides.length - 1;
+
+    }
+
+
+    currentSlide = index;
+
+
+    slides.forEach(
+        slide =>
+            slide.classList.remove(
+                "active"
+            )
+    );
+
+
+    slides[currentSlide]
+        .classList.add(
+            "active"
+        );
+
+
+    const dots =
+        document.querySelectorAll(
+            ".output-dot"
+        );
+
+
+    dots.forEach(
+        (dot,index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
+
+        }
+    );
+
+
+    const thumbnails =
+        document.querySelectorAll(
+            ".output-thumb"
+        );
+
+
+    thumbnails.forEach(
+        (thumbnail,index) => {
+
+            thumbnail.classList.toggle(
+                "active",
+                index === currentSlide
+            );
+
+        }
+    );
+
+}
+
+
+/* NEXT / PREVIOUS */
+
+function changeSlide(direction){
+
+    showSlide(
+        currentSlide + direction
+    );
+
+}
+
+
+/* =====================================================
+   2 SECOND AUTOPLAY
+===================================================== */
+
+let slideshowTimer =
+    setInterval(
+        () => {
+
+            changeSlide(1);
+
+        },
+        2000
+    );
+
+
+const slideshowSection =
+    document.querySelector(
+        ".project-output-section"
+    );
+
+
+slideshowSection.addEventListener(
+    "mouseenter",
+    () => {
+
+        clearInterval(
+            slideshowTimer
+        );
+
+    }
+);
+
+
+slideshowSection.addEventListener(
+    "mouseleave",
+    () => {
+
+        clearInterval(
+            slideshowTimer
+        );
+
+
+        slideshowTimer =
+            setInterval(
+                () => {
+
+                    changeSlide(1);
+
+                },
+                2000
+            );
+
+    }
+);
+
+
+/* =====================================================
+   VOICE GUIDE
+===================================================== */
+
+const voiceToggle =
+    document.getElementById(
+        "voiceToggle"
+    );
+
+
+const voiceGuide =
+    document.getElementById(
+        "voiceGuide"
+    );
+
+
+const voiceSelect =
+    document.getElementById(
+        "voiceSelect"
+    );
+
+
+const voiceRate =
+    document.getElementById(
+        "voiceRate"
+    );
+
+
+let availableVoices = [];
+
+
+voiceToggle.onclick =
+    () => {
+
+        voiceGuide.classList.toggle(
+            "show"
+        );
+
+    };
+
+
+function loadVoices(){
+
+
+    availableVoices =
+        speechSynthesis.getVoices();
+
+
+    voiceSelect.innerHTML =
+        '<option value="">Default Voice</option>';
+
+
+    availableVoices.forEach(
+        (voice,index) => {
+
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                index;
+
+
+            option.textContent =
+                voice.name +
+                " (" +
+                voice.lang +
+                ")";
+
+
+            voiceSelect.appendChild(
+                option
+            );
+
+        }
+    );
+
+}
+
+
+loadVoices();
+
+
+if(
+    "speechSynthesis"
+    in window
+){
+
+    speechSynthesis.onvoiceschanged =
+        loadVoices;
+
+}
+
+
+/* =====================================================
+   PORTFOLIO VOICE
+===================================================== */
+
+const portfolioNarration = `
+
+Hello, welcome to Varsha GK's Data Analyst portfolio.
+
+The first project is Food Recognition and Calorie
+Estimation using Deep Learning.
+
+The user uploads a food image through the Django
+web interface.
+
+The image is sent for preprocessing, including
+resizing and normalization.
+
+The processed image is passed to a deep learning
+model using CNN or ResNet.
+
+The system recognizes and classifies the food.
+
+The calorie estimation stage uses calorie and
+nutrition information.
+
+The final result is displayed through the web
+application.
+
+The project uses Python, Django, deep learning,
+CNN, ResNet and computer vision.
+
+The evaluated model achieved approximately
+ninety-two percent accuracy.
+
+The main limitations include image quality,
+food appearance and similar food classes.
+
+The second project is an Online E-Learning Platform
+with Integrated AI Chatbot.
+
+Users access the platform through a web browser.
+
+The frontend uses HTML5, CSS3, JavaScript
+and Bootstrap.
+
+The PHP application server handles user management,
+course management, enrollment, videos, quizzes,
+progress tracking, achievements, payment,
+contact and administration.
+
+MySQL is used to store application data.
+
+The administrator can access the admin dashboard
+and manage categories and courses.
+
+The AI chatbot receives a user question.
+
+The question goes through NLP processing.
+
+The system recognizes the user's intent.
+
+Relevant information is retrieved from the
+knowledge repository.
+
+The AI response is then returned to the web client.
+
+The portfolio also contains screenshots of the
+e-learning platform.
+
+The screenshots automatically change every
+two seconds.
+
+Thank you for visiting Varsha GK's portfolio.
+
+`;
+
+
+function playPortfolioVoice(){
+
+
+    if(
+        !("speechSynthesis" in window)
+    ){
+
+        alert(
+            "Speech synthesis is not supported."
+        );
+
+        return;
+
+    }
+
+
+    speechSynthesis.cancel();
+
+
+    const utterance =
+        new SpeechSynthesisUtterance(
+            portfolioNarration
+        );
+
+
+    utterance.rate =
+        parseFloat(
+            voiceRate.value
+        );
+
+
+    if(
+        voiceSelect.value !== ""
+    ){
+
+        const selectedVoice =
+            availableVoices[
+                parseInt(
+                    voiceSelect.value
+                )
+            ];
+
+
+        if(selectedVoice){
+
+            utterance.voice =
+                selectedVoice;
+
+        }
+
+    }
+
+
+    speechSynthesis.speak(
+        utterance
+    );
+
+}
+
+
+function pauseVoice(){
+
+    if(
+        speechSynthesis.speaking
+    ){
+
+        speechSynthesis.pause();
+
+    }
+
+}
+
+
+function resumeVoice(){
+
+    if(
+        speechSynthesis.paused
+    ){
+
+        speechSynthesis.resume();
+
+    }
+
+}
+
+
+function stopVoice(){
+
+    speechSynthesis.cancel();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
