@@ -1,5 +1,0 @@
-mkdir assets
-touch assets/.gitkeep
-git add assets/
-git commit -m "Add assets folder"
-git push origin main
