@@ -1298,6 +1298,17 @@ section{
 }
 
 
+/* COMPACT PROJECT 02 ARCHITECTURE */
+.project02-architecture{margin-top:16px;padding:18px;border:1px solid #cbd5e1;border-radius:14px;background:#f8fafc;color:#111827}
+.project02-architecture>h5{text-align:center;font:700 1.05rem "Space Grotesk";margin-bottom:14px}
+.p2-main-flow,.p2-chat-nodes{display:flex;align-items:stretch;justify-content:center;gap:9px}
+.p2-node{flex:1;min-width:0;padding:13px 11px;text-align:center;border:1.5px solid #64748b;border-radius:9px;background:#fff;font-size:.77rem}
+.p2-node b,.p2-node span,.p2-node small{display:block}.p2-node b{font-size:.88rem;margin-bottom:5px}.p2-node span{color:#334155}.p2-node small{margin-top:7px;color:#64748b;font-size:.68rem}
+.p2-server{border-color:#0284c7;background:#f0f9ff}.p2-arrow{align-self:center;color:#0284c7;font-size:1.4rem}
+.p2-chat-flow{margin-top:12px;padding:12px;border:1px dashed #94a3b8;border-radius:10px;background:#eef2ff}
+.p2-chat-label{text-align:center;margin-bottom:9px;color:#4338ca;font-size:.77rem;font-weight:800}.p2-chat-nodes .p2-node{padding:10px 8px;font-size:.7rem}.p2-chat-nodes .p2-node b{font-size:.78rem}
+.output-dot{border:0;padding:0}.output-thumb{cursor:pointer;background:transparent;color:inherit;font:inherit}
+
 /* =========================================================
    PROJECT OUTPUT SLIDESHOW
 ========================================================= */
@@ -2296,22 +2307,16 @@ footer{
                 <h4>Project files</h4>
                 <p class="expense-note">Open or download the source policy, claim audit data, and completed dashboard workbook.</p>
                 <div class="expense-file-grid">
-                    <a class="expense-file" href="policy.xlsx" download><span>POLICY RULES</span><strong>policy.xlsx</strong><small>Category-level spending limits</small></a>
-                    <a class="expense-file" href="audi.xlsx" download><span>CLAIM AUDIT DATA</span><strong>audi.xlsx</strong><small>Claim detail, audit flags, and pivot summaries</small></a>
-                    <a class="expense-file" href="EMPLOYEE%20EXPENSE%20CLAIM%20AUDIT%20DASHBOARD.xlsx" download><span>COMPLETED DASHBOARD</span><strong>EMPLOYEE EXPENSE CLAIM AUDIT DASHBOARD.xlsx</strong><small>Summary metrics and dashboard workbook</small></a>
+                    <a class="expense-file" href="https://raw.githubusercontent.com/varshagk1/MY-PORTFOLIO/main/Assets/policy.xlsx" download><span>POLICY RULES</span><strong>policy.xlsx</strong><small>Category-level spending limits</small></a>
+                    <a class="expense-file" href="https://raw.githubusercontent.com/varshagk1/MY-PORTFOLIO/main/Assets/audi.xlsx" download><span>CLAIM AUDIT DATA</span><strong>audi.xlsx</strong><small>Claim detail, audit flags, and pivot summaries</small></a>
+                    <a class="expense-file" href="https://raw.githubusercontent.com/varshagk1/MY-PORTFOLIO/main/Assets/EMPLOYEE%20EXPENSE%20CLAIM%20AUDIT%20DASHBOARD.xlsx" download><span>COMPLETED DASHBOARD</span><strong>EMPLOYEE EXPENSE CLAIM AUDIT DASHBOARD.xlsx</strong><small>Summary metrics and dashboard workbook</small></a>
                 </div>
             </div>
 
-            <div class="project-block">
-                <h4>Audit workflow</h4>
-                <div class="module-grid">
-                    <div class="module">Policy threshold lookup</div>
-                    <div class="module">Receipt availability review</div>
-                    <div class="module">Duplicate and risk checks</div>
-                    <div class="module">Exception triage and resolution</div>
-                </div>
-            </div>
+            
         </div>
+
+            
     </article>
 
 
@@ -2358,436 +2363,27 @@ footer{
                 </h4>
 
 
-                <div class="architecture-wrap">
-
-
-                    <div class="architecture-title">
-
-                        Project 2: Online E-Learning Platform
-                        with Integrated AI Chatbot
-
+                <div class="project02-architecture" role="img" aria-label="Compact architecture showing learner browser, PHP application, MySQL database, and a separate NLP chatbot flow">
+                    <h5>Platform architecture</h5>
+                    <div class="p2-main-flow">
+                        <div class="p2-node"><b>Learner</b><span>Browser and web client</span><small>HTML · CSS · JavaScript · Bootstrap</small></div>
+                        <div class="p2-arrow" aria-hidden="true">→</div>
+                        <div class="p2-node p2-server"><b>PHP application</b><span>Accounts · courses · enrollment · lessons · quizzes · payments</span></div>
+                        <div class="p2-arrow" aria-hidden="true">→</div>
+                        <div class="p2-node"><b>MySQL</b><span>Users · courses · progress</span></div>
                     </div>
-
-
-                    <div class="architecture-canvas">
-
-
-                        <div class="elearn-layout">
-
-
-                            <!-- =================================
-                                 USER + ADMIN
-                            ================================== -->
-
-                            <div>
-
-
-                                <!-- WEB BROWSER -->
-
-                                <div class="browser-box">
-
-
-                                    <h5>
-                                        Web Browser
-                                    </h5>
-
-
-                                    <div class="stack">
-
-
-                                        <div class="e-node">
-
-                                            <strong>
-                                                USERS
-                                            </strong>
-
-                                            Learners
-
-                                        </div>
-
-
-                                        <div class="e-node">
-
-                                            <strong>
-                                                Frontend
-                                                Web Client
-                                            </strong>
-
-                                            HTML5<br>
-                                            CSS3<br>
-                                            JavaScript<br>
-                                            Bootstrap
-
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-
-
-
-                                <!-- ADMIN -->
-
-                                <div class="admin-box">
-
-
-                                    <h5>
-                                        Admin Access
-                                    </h5>
-
-
-                                    <div class="stack">
-
-
-                                        <div class="e-node">
-
-                                            <strong>
-                                                ADMIN
-                                            </strong>
-
-                                        </div>
-
-
-                                        <div class="e-node">
-
-                                            <strong>
-                                                Admin Browser
-                                            </strong>
-
-                                        </div>
-
-
-                                        <div class="e-node">
-
-                                            <strong>
-                                                Admin Dashboard
-                                            </strong>
-
-                                        </div>
-
-
-                                        <div class="e-node">
-
-                                            <strong>
-                                                Admin Category /
-                                                Course Management
-                                            </strong>
-
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-
-
-                            <!-- =================================
-                                 APPLICATION SERVER
-                            ================================== -->
-
-                            <div>
-
-
-                                <div class="server-box">
-
-
-                                    <h5>
-
-                                        Application Server
-                                        <br>
-
-                                        PHP / Server-Side
-                                        Web Application
-
-                                    </h5>
-
-
-                                    <div class="server-modules">
-
-
-                                        <div class="e-node">
-                                            User Management
-                                        </div>
-
-
-                                        <div class="e-node">
-                                            Quizzes
-                                        </div>
-
-
-                                        <div class="e-node">
-                                            Course Management
-                                        </div>
-
-
-                                        <div class="e-node">
-                                            Progress Tracking
-                                        </div>
-
-
-                                        <div class="e-node">
-                                            Enrollment
-                                        </div>
-
-
-                                        <div class="e-node">
-                                            Achievements
-                                        </div>
-
-
-                                        <div class="e-node">
-                                            Videos / Lessons
-                                        </div>
-
-
-                                        <div class="e-node">
-                                            Contact
-                                        </div>
-
-
-                                        <div class="e-node wide">
-                                            Payment Module
-                                        </div>
-
-
-                                        <div class="e-node wide">
-                                            Admin Module
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-
-
-                            <!-- =================================
-                                 DATABASE
-                            ================================== -->
-
-                            <div class="db-box">
-
-
-                                <h5>
-                                    Database
-                                </h5>
-
-
-                                <div class="arch-db">
-
-
-                                    <span>
-
-                                        <strong>
-                                            MySQL
-                                        </strong>
-
-                                        <br>
-
-                                        Users
-                                        <br>
-
-                                        Courses
-                                        <br>
-
-                                        Enrollment
-                                        <br>
-
-                                        Progress
-                                        <br>
-
-                                        Admin Data
-
-                                    </span>
-
-
-                                </div>
-
-
-                            </div>
-
-
-                            <!-- =================================
-                                 AI CHATBOT
-                            ================================== -->
-
-                            <div class="chatbot-box-diagram">
-
-
-                                <h5>
-                                    AI CHATBOT
-                                </h5>
-
-
-                                <div class="chat-flow">
-
-
-                                    <div class="e-node">
-
-                                        <strong>
-                                            User Question
-                                        </strong>
-
-                                    </div>
-
-
-                                    <div class="chat-arrow">
-                                        →
-                                    </div>
-
-
-                                    <div class="e-node">
-
-                                        <strong>
-                                            NLP Processing
-                                        </strong>
-
-                                        NLP /
-                                        NLTK /
-                                        SpaCy
-
-                                    </div>
-
-
-                                    <div class="chat-arrow">
-                                        →
-                                    </div>
-
-
-                                    <div class="e-node">
-
-                                        <strong>
-                                            Intent
-                                            Recognition
-                                        </strong>
-
-                                    </div>
-
-
-                                    <div class="chat-arrow">
-                                        →
-                                    </div>
-
-
-                                    <div class="e-node">
-
-                                        <strong>
-                                            Retrieve
-                                            Information
-                                        </strong>
-
-                                    </div>
-
-
-                                    <div class="chat-arrow">
-                                        →
-                                    </div>
-
-
-                                    <div class="e-node">
-
-                                        <strong>
-                                            AI Response
-                                        </strong>
-
-                                    </div>
-
-
-                                    <div class="chat-arrow">
-                                        →
-                                    </div>
-
-
-                                    <div class="e-node">
-
-                                        <strong>
-                                            Web Client
-                                        </strong>
-
-                                    </div>
-
-
-                                </div>
-
-
-                                <!-- KNOWLEDGE -->
-
-                                <div class="chat-repo">
-
-
-                                    <div class="arch-db">
-
-
-                                        <span>
-
-                                            <strong>
-                                                Content /
-                                                Knowledge
-                                                Repository
-                                            </strong>
-
-                                            <br>
-
-                                            Courses
-                                            <br>
-
-                                            FAQs
-                                            <br>
-
-                                            Learning Data
-
-                                        </span>
-
-
-                                    </div>
-
-
-                                </div>
-
-
-                                <!-- AI TECHNOLOGIES -->
-
-                                <div class="chat-bottom">
-
-
-                                    <div
-                                        class="arch-note"
-                                        style="max-width:250px"
-                                    >
-
-                                        <h5>
-                                            AI Technologies
-                                        </h5>
-
-                                        NLP • NLTK •
-                                        SpaCy •
-                                        TensorFlow •
-                                        Transformers
-
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-
-
+                    <div class="p2-chat-flow">
+                        <div class="p2-chat-label">Separate AI chatbot flow</div>
+                        <div class="p2-chat-nodes">
+                            <div class="p2-node"><b>Question</b><span>Learner asks for help</span></div>
+                            <div class="p2-arrow" aria-hidden="true">→</div>
+                            <div class="p2-node"><b>NLP & intent</b><span>NLTK · spaCy</span></div>
+                            <div class="p2-arrow" aria-hidden="true">→</div>
+                            <div class="p2-node"><b>Knowledge</b><span>Courses · FAQs</span></div>
+                            <div class="p2-arrow" aria-hidden="true">→</div>
+                            <div class="p2-node"><b>Response</b><span>Answer returned to learner</span></div>
                         </div>
-
-
                     </div>
-
-
                 </div>
 
             </div>
@@ -3293,34 +2889,7 @@ footer{
                     </div>
 
 
-                    <!-- 09 -->
-
-                    <div class="output-slide">
-
-                        <img
-                            class="output-slide-image"
-                            src="Assets/09-achievements.png"
-                            alt="Achievements"
-                        >
-
-                        <div class="output-slide-info">
-
-                            <span>
-                                Page 09
-                            </span>
-
-                            <h5>
-                                Achievements
-                            </h5>
-
-                            <p>
-                                Displays learner
-                                achievements.
-                            </p>
-
-                        </div>
-
-                    </div>
+                    
 
 
                     <!-- 10 -->
@@ -3383,34 +2952,7 @@ footer{
                     </div>
 
 
-                    <!-- 12 -->
-
-                    <div class="output-slide">
-
-                        <img
-                            class="output-slide-image"
-                            src="Assets/12-admin-category.png"
-                            alt="Admin Category"
-                        >
-
-                        <div class="output-slide-info">
-
-                            <span>
-                                Page 12
-                            </span>
-
-                            <h5>
-                                Admin Category
-                            </h5>
-
-                            <p>
-                                Admin can manage course
-                                categories and content.
-                            </p>
-
-                        </div>
-
-                    </div>
+                    
 
 
                 </div>
@@ -3420,21 +2962,18 @@ footer{
 
                     <button
                         class="output-prev"
-                        onclick="changeSlide(-1)"
+                        aria-label="Previous slide"
                     >
                         ❮
                     </button>
 
 
-                    <div
-                        class="output-dots"
-                        id="outputDots"
-                    ></div>
+                    <div class="output-dots"></div>
 
 
                     <button
                         class="output-next"
-                        onclick="changeSlide(1)"
+                        aria-label="Next slide"
                     >
                         ❯
                     </button>
@@ -3442,10 +2981,7 @@ footer{
                 </div>
 
 
-                <div
-                    class="output-thumbnails"
-                    id="outputThumbnails"
-                ></div>
+                <div class="output-thumbnails"></div>
 
 
             </div>
@@ -3881,266 +3417,68 @@ revealElements.forEach(
 
 
 /* =====================================================
-   SLIDESHOW
+   PROJECT OUTPUT SLIDESHOWS (2 SECOND AUTOPLAY)
 ===================================================== */
 
-const slides =
-    document.querySelectorAll(
-        ".output-slide"
-    );
+document.querySelectorAll(".project-output-section").forEach(section => {
+    const slides = Array.from(section.querySelectorAll(".output-slide"));
+    const dotsContainer = section.querySelector(".output-dots");
+    const thumbnailsContainer = section.querySelector(".output-thumbnails");
+    const previousButton = section.querySelector(".output-prev");
+    const nextButton = section.querySelector(".output-next");
+    let currentSlide = 0;
+    let slideshowTimer;
 
+    function showSlide(index) {
+        if (!slides.length) return;
+        currentSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => slide.classList.toggle("active", i === currentSlide));
+        dotsContainer.querySelectorAll(".output-dot").forEach((dot, i) => dot.classList.toggle("active", i === currentSlide));
+        thumbnailsContainer.querySelectorAll(".output-thumb").forEach((thumb, i) => thumb.classList.toggle("active", i === currentSlide));
+    }
 
-const dotsContainer =
-    document.getElementById(
-        "outputDots"
-    );
+    slides.forEach((slide, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "output-dot";
+        dot.setAttribute("aria-label", `Show slide ${index + 1}`);
+        dot.addEventListener("click", () => showSlide(index));
+        dotsContainer.appendChild(dot);
 
-
-const thumbnailsContainer =
-    document.getElementById(
-        "outputThumbnails"
-    );
-
-
-let currentSlide = 0;
-
-
-/* CREATE DOTS + THUMBNAILS */
-
-slides.forEach(
-    (slide,index) => {
-
-
-        const dot =
-            document.createElement(
-                "span"
-            );
-
-
-        dot.className =
-            "output-dot";
-
-
-        if(index === 0){
-
-            dot.classList.add(
-                "active"
-            );
-
+        const thumbnail = document.createElement("button");
+        thumbnail.type = "button";
+        thumbnail.className = "output-thumb";
+        thumbnail.setAttribute("aria-label", `Show slide ${index + 1}`);
+        const sourceImage = slide.querySelector("img");
+        if (sourceImage) {
+            const thumbnailImage = document.createElement("img");
+            thumbnailImage.src = sourceImage.getAttribute("src");
+            thumbnailImage.alt = sourceImage.alt;
+            thumbnail.appendChild(thumbnailImage);
+        } else {
+            const title = slide.querySelector(".output-slide-info h5");
+            thumbnail.textContent = title ? title.textContent.trim() : `Slide ${index + 1}`;
         }
-
-
-        dot.onclick = () => {
-
-            showSlide(index);
-
-        };
-
-
-        dotsContainer.appendChild(
-            dot
-        );
-
-
-        const thumbnail =
-            document.createElement(
-                "div"
-            );
-
-
-        thumbnail.className =
-            "output-thumb";
-
-
-        if(index === 0){
-
-            thumbnail.classList.add(
-                "active"
-            );
-
-        }
-
-
-        const sourceImage =
-            slide.querySelector(
-                "img"
-            );
-
-
-        const thumbnailImage =
-            document.createElement(
-                "img"
-            );
-
-
-        thumbnailImage.src =
-            sourceImage.src;
-
-
-        thumbnailImage.alt =
-            sourceImage.alt;
-
-
-        thumbnail.appendChild(
-            thumbnailImage
-        );
-
-
-        thumbnail.onclick = () => {
-
-            showSlide(index);
-
-        };
-
-
-        thumbnailsContainer.appendChild(
-            thumbnail
-        );
-
-    }
-);
-
-
-/* SHOW SLIDE */
-
-function showSlide(index){
-
-
-    if(index >= slides.length){
-
-        index = 0;
-
-    }
-
-
-    if(index < 0){
-
-        index =
-            slides.length - 1;
-
-    }
-
-
-    currentSlide = index;
-
-
-    slides.forEach(
-        slide =>
-            slide.classList.remove(
-                "active"
-            )
-    );
-
-
-    slides[currentSlide]
-        .classList.add(
-            "active"
-        );
-
-
-    const dots =
-        document.querySelectorAll(
-            ".output-dot"
-        );
-
-
-    dots.forEach(
-        (dot,index) => {
-
-            dot.classList.toggle(
-                "active",
-                index === currentSlide
-            );
-
-        }
-    );
-
-
-    const thumbnails =
-        document.querySelectorAll(
-            ".output-thumb"
-        );
-
-
-    thumbnails.forEach(
-        (thumbnail,index) => {
-
-            thumbnail.classList.toggle(
-                "active",
-                index === currentSlide
-            );
-
-        }
-    );
-
-}
-
-
-/* NEXT / PREVIOUS */
-
-function changeSlide(direction){
-
-    showSlide(
-        currentSlide + direction
-    );
-
-}
-
-
-/* =====================================================
-   2 SECOND AUTOPLAY
-===================================================== */
-
-let slideshowTimer =
-    setInterval(
-        () => {
-
-            changeSlide(1);
-
-        },
-        2000
-    );
-
-
-const slideshowSection =
-    document.querySelector(
-        ".project-output-section"
-    );
-
-
-slideshowSection.addEventListener(
-    "mouseenter",
-    () => {
-
-        clearInterval(
-            slideshowTimer
-        );
-
-    }
-);
-
-
-slideshowSection.addEventListener(
-    "mouseleave",
-    () => {
-
-        clearInterval(
-            slideshowTimer
-        );
-
-
-        slideshowTimer =
-            setInterval(
-                () => {
-
-                    changeSlide(1);
-
-                },
-                2000
-            );
-
-    }
-);
+        thumbnail.addEventListener("click", () => showSlide(index));
+        thumbnailsContainer.appendChild(thumbnail);
+    });
+
+    previousButton.addEventListener("click", () => showSlide(currentSlide - 1));
+    nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+    showSlide(0);
+
+    const startAutoplay = () => {
+        clearInterval(slideshowTimer);
+        if (slides.length > 1) slideshowTimer = setInterval(() => showSlide(currentSlide + 1), 2000);
+    };
+    section.addEventListener("mouseenter", () => clearInterval(slideshowTimer));
+    section.addEventListener("mouseleave", startAutoplay);
+    section.addEventListener("focusin", () => clearInterval(slideshowTimer));
+    section.addEventListener("focusout", event => {
+        if (!section.contains(event.relatedTarget)) startAutoplay();
+    });
+    startAutoplay();
+});
 
 
 /* =====================================================
