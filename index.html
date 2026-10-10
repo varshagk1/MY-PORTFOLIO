@@ -533,6 +533,14 @@ section{
 
 .about-image{
 
+    display:block;
+    position:relative;
+    width:100%;
+    padding:0;
+    color:inherit;
+    font:inherit;
+    background:transparent;
+    cursor:pointer;
     max-width:420px;
 
     margin:auto;
@@ -552,6 +560,23 @@ section{
     animation:
         imageFloat 5s ease-in-out infinite;
 }
+
+.about-image::after{
+    content:"Click to hear about Varsha";
+    position:absolute;
+    left:50%;
+    bottom:14px;
+    transform:translateX(-50%);
+    padding:8px 12px;
+    border:1px solid rgba(56,189,248,.35);
+    border-radius:20px;
+    background:rgba(2,6,23,.82);
+    color:#e0f2fe;
+    font-size:.78rem;
+    white-space:nowrap;
+}
+.about-image:focus-visible{outline:3px solid var(--cyan);outline-offset:5px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 .about-image img{
 
@@ -1663,136 +1688,6 @@ section{
 
 
 /* =========================================================
-   VOICE
-========================================================= */
-
-.voice-toggle{
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:20px;
-
-    z-index:1001;
-
-    width:54px;
-
-    height:54px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--cyan),
-            var(--purple)
-        );
-
-    color:#fff;
-
-    font-size:1.2rem;
-
-    cursor:pointer;
-}
-
-.voice-guide{
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:85px;
-
-    z-index:1000;
-
-    width:300px;
-
-    padding:18px;
-
-    border-radius:18px;
-
-    background:
-        rgba(2,6,23,.95);
-
-    border:
-        1px solid
-        rgba(56,189,248,.25);
-
-    transform:
-        translateY(130%);
-
-    transition:.4s;
-}
-
-.voice-guide.show{
-
-    transform:none;
-}
-
-.voice-guide h3{
-
-    color:var(--cyan);
-
-    font-size:1rem;
-
-    margin-bottom:10px;
-}
-
-.voice-controls{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:6px;
-
-    margin-bottom:10px;
-}
-
-.voice-controls button{
-
-    padding:7px 9px;
-
-    border-radius:7px;
-
-    border:
-        1px solid
-        rgba(148,163,184,.2);
-
-    background:
-        rgba(255,255,255,.04);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:.72rem;
-}
-
-.voice-guide select{
-
-    width:100%;
-
-    padding:8px;
-
-    border-radius:8px;
-
-    background:#0f172a;
-
-    color:#fff;
-
-    border:
-        1px solid
-        var(--border);
-
-    margin-bottom:7px;
-}
-
-
-/* =========================================================
    FOOTER
 ========================================================= */
 
@@ -1910,18 +1805,9 @@ footer{
         padding:10px;
     }
 
-    .voice-guide{
+    
 
-        width:
-            calc(100% - 30px);
-
-        right:15px;
-    }
-
-    .voice-toggle{
-
-        right:15px;
-    }
+    
 }
 
 </style>
@@ -2052,14 +1938,19 @@ footer{
     <div class="about-grid">
 
 
-        <div class="about-image reveal">
-
+        <button
+            class="about-image reveal"
+            id="aboutVoiceButton"
+            type="button"
+            aria-label="Play spoken introduction about Varsha GK"
+            title="Click to hear about Varsha"
+        >
             <img
                 src="Assets/varsha.jpg"
                 alt="Varsha GK - Data Analyst"
             >
-
-        </div>
+        </button>
+        <span class="about-voice-status visually-hidden" id="aboutVoiceStatus" role="status" aria-live="polite"></span>
 
 
         <div class="about-content reveal">
@@ -3283,83 +3174,6 @@ footer{
 
 
 <!-- =====================================================
-     VOICE GUIDE
-===================================================== -->
-
-<button
-    class="voice-toggle"
-    id="voiceToggle"
->
-    🔊
-</button>
-
-
-<div
-    class="voice-guide"
-    id="voiceGuide"
->
-
-    <h3>
-        🎙 Portfolio Voice Guide
-    </h3>
-
-
-    <div class="voice-controls">
-
-        <button onclick="playPortfolioVoice()">
-            ▶ Play Full
-        </button>
-
-        <button onclick="pauseVoice()">
-            ⏸ Pause
-        </button>
-
-        <button onclick="resumeVoice()">
-            ▶ Resume
-        </button>
-
-        <button onclick="stopVoice()">
-            ⏹ Stop
-        </button>
-
-    </div>
-
-
-    <select id="voiceSelect">
-
-        <option value="">
-            Default Voice
-        </option>
-
-    </select>
-
-
-    <label
-        style="
-            display:block;
-            color:#94a3b8;
-            font-size:.72rem;
-            margin-bottom:4px;
-        "
-    >
-        Voice Speed
-    </label>
-
-
-    <input
-        type="range"
-        id="voiceRate"
-        min="0.6"
-        max="1.4"
-        step="0.1"
-        value="1"
-        style="width:100%"
-    >
-
-</div>
-
-
-<!-- =====================================================
      FOOTER
 ===================================================== -->
 
@@ -3482,259 +3296,41 @@ document.querySelectorAll(".project-output-section").forEach(section => {
 
 
 /* =====================================================
-   VOICE GUIDE
+   ABOUT PORTRAIT SPEECH
 ===================================================== */
 
-const voiceToggle =
-    document.getElementById(
-        "voiceToggle"
-    );
+const aboutVoiceButton = document.getElementById("aboutVoiceButton");
+const aboutVoiceStatus = document.getElementById("aboutVoiceStatus");
+const aboutNarration = "Hello, I'm Varsha, a Data Science graduate interested in data analysis, machine learning, and artificial intelligence. I enjoy working with real-world datasets, finding useful patterns, and turning data into meaningful insights. My interests include data visualization, predictive modelling, forecasting, machine learning, and AI-powered applications. I work with Python, SQL, exploratory data analysis, and natural language processing.";
 
+aboutVoiceButton.addEventListener("click", () => {
+    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+        aboutVoiceStatus.textContent = "Speech is not supported in this browser.";
+        return;
+    }
 
-const voiceGuide =
-    document.getElementById(
-        "voiceGuide"
-    );
+    if (speechSynthesis.speaking || speechSynthesis.pending) {
+        speechSynthesis.cancel();
+        aboutVoiceButton.setAttribute("aria-label", "Play spoken introduction about Varsha GK");
+        aboutVoiceStatus.textContent = "Speech stopped.";
+        return;
+    }
 
-
-const voiceSelect =
-    document.getElementById(
-        "voiceSelect"
-    );
-
-
-const voiceRate =
-    document.getElementById(
-        "voiceRate"
-    );
-
-
-let availableVoices = [];
-
-
-voiceToggle.onclick =
-    () => {
-
-        voiceGuide.classList.toggle(
-            "show"
-        );
-
+    const utterance = new SpeechSynthesisUtterance(aboutNarration);
+    utterance.rate = 1;
+    utterance.onend = () => {
+        aboutVoiceButton.setAttribute("aria-label", "Play spoken introduction about Varsha GK");
+        aboutVoiceStatus.textContent = "Introduction finished.";
+    };
+    utterance.onerror = () => {
+        aboutVoiceButton.setAttribute("aria-label", "Play spoken introduction about Varsha GK");
+        aboutVoiceStatus.textContent = "Could not play the introduction.";
     };
 
-
-function loadVoices(){
-
-
-    availableVoices =
-        speechSynthesis.getVoices();
-
-
-    voiceSelect.innerHTML =
-        '<option value="">Default Voice</option>';
-
-
-    availableVoices.forEach(
-        (voice,index) => {
-
-
-            const option =
-                document.createElement(
-                    "option"
-                );
-
-
-            option.value =
-                index;
-
-
-            option.textContent =
-                voice.name +
-                " (" +
-                voice.lang +
-                ")";
-
-
-            voiceSelect.appendChild(
-                option
-            );
-
-        }
-    );
-
-}
-
-
-loadVoices();
-
-
-if(
-    "speechSynthesis"
-    in window
-){
-
-    speechSynthesis.onvoiceschanged =
-        loadVoices;
-
-}
-
-
-/* =====================================================
-   PORTFOLIO VOICE
-===================================================== */
-
-const portfolioNarration = `
-
-Hello, welcome to Varsha GK's Data Analyst portfolio.
-
-The first project is the Employee Expense Claim Audit Dashboard.
-
-It combines employee claim records with category policy limits
-and highlights claims requiring review.
-
-The workbook covers ten claims totaling fifty-three thousand
-and two hundred rupees. Four claims are marked high risk and
-four require review. Three claims exceed policy limits and
-two have missing receipts.
-
-The largest category is hotel expenses at thirty-three thousand
-five hundred rupees, followed by travel at sixteen thousand
-two hundred and food at three thousand five hundred.
-
-The project files include the policy rules, detailed claim audit
-data, and the completed Excel dashboard.
-
-The second project is an Online E-Learning Platform
-with Integrated AI Chatbot.
-
-Users access the platform through a web browser.
-
-The frontend uses HTML5, CSS3, JavaScript
-and Bootstrap.
-
-The PHP application server handles user management,
-course management, enrollment, videos, quizzes,
-progress tracking, achievements, payment,
-contact and administration.
-
-MySQL is used to store application data.
-
-The administrator can access the admin dashboard
-and manage categories and courses.
-
-The AI chatbot receives a user question.
-
-The question goes through NLP processing.
-
-The system recognizes the user's intent.
-
-Relevant information is retrieved from the
-knowledge repository.
-
-The AI response is then returned to the web client.
-
-The portfolio also contains screenshots of the
-e-learning platform.
-
-The screenshots automatically change every
-two seconds.
-
-Thank you for visiting Varsha GK's portfolio.
-
-`;
-
-
-function playPortfolioVoice(){
-
-
-    if(
-        !("speechSynthesis" in window)
-    ){
-
-        alert(
-            "Speech synthesis is not supported."
-        );
-
-        return;
-
-    }
-
-
-    speechSynthesis.cancel();
-
-
-    const utterance =
-        new SpeechSynthesisUtterance(
-            portfolioNarration
-        );
-
-
-    utterance.rate =
-        parseFloat(
-            voiceRate.value
-        );
-
-
-    if(
-        voiceSelect.value !== ""
-    ){
-
-        const selectedVoice =
-            availableVoices[
-                parseInt(
-                    voiceSelect.value
-                )
-            ];
-
-
-        if(selectedVoice){
-
-            utterance.voice =
-                selectedVoice;
-
-        }
-
-    }
-
-
-    speechSynthesis.speak(
-        utterance
-    );
-
-}
-
-
-function pauseVoice(){
-
-    if(
-        speechSynthesis.speaking
-    ){
-
-        speechSynthesis.pause();
-
-    }
-
-}
-
-
-function resumeVoice(){
-
-    if(
-        speechSynthesis.paused
-    ){
-
-        speechSynthesis.resume();
-
-    }
-
-}
-
-
-function stopVoice(){
-
-    speechSynthesis.cancel();
-
-}
-
+    speechSynthesis.speak(utterance);
+    aboutVoiceButton.setAttribute("aria-label", "Stop spoken introduction about Varsha GK");
+    aboutVoiceStatus.textContent = "Speaking about Varsha.";
+});
 
 </script>
 
