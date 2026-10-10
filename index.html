@@ -824,6 +824,24 @@ section{
 
 
 /* =========================================================
+   EXPENSE AUDIT PROJECT
+========================================================= */
+.expense-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.expense-kpi,.expense-panel,.expense-file{border:1px solid var(--border);border-radius:14px;background:rgba(15,23,42,.72)}
+.expense-kpi{padding:18px}.expense-kpi span,.expense-file small{display:block;color:var(--muted);font-size:.82rem}
+.expense-kpi strong{display:block;margin-top:5px;color:var(--cyan);font:700 1.55rem "Space Grotesk"}
+.expense-dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.expense-panel{padding:20px}.expense-panel h5{font-size:1rem;margin-bottom:15px}
+.expense-row{display:grid;grid-template-columns:1fr auto;gap:5px 12px;margin:13px 0;font-size:.9rem}
+.expense-row i{grid-column:1/-1;height:7px;border-radius:8px;background:linear-gradient(90deg,var(--cyan),var(--blue));width:var(--bar)}
+.expense-exceptions{list-style:none;display:grid;gap:12px}.expense-exceptions li{padding:10px 12px;border-left:3px solid #f59e0b;background:rgba(245,158,11,.07);border-radius:0 8px 8px 0;font-size:.82rem}
+.expense-exceptions b,.expense-exceptions span{display:block}.expense-exceptions span,.expense-note{color:var(--muted);font-size:.82rem}
+.expense-note{margin-top:12px}.expense-file-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.expense-file{display:block;padding:16px;transition:.25s}.expense-file:hover{border-color:rgba(56,189,248,.45);transform:translateY(-3px)}
+.expense-file span{display:block;color:var(--cyan);font-size:.68rem;letter-spacing:1px;font-weight:800}.expense-file strong{display:block;margin:8px 0;overflow-wrap:anywhere;font-size:.9rem}.expense-file small{line-height:1.45}
+@media(max-width:760px){.expense-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.expense-dashboard-grid,.expense-file-grid{grid-template-columns:1fr}}
+
+/* =========================================================
    ARCHITECTURE DIAGRAM
    WHITE TECHNICAL DIAGRAM STYLE
 ========================================================= */
@@ -2026,7 +2044,7 @@ footer{
         <div class="about-image reveal">
 
             <img
-                src="varsha.jpg"
+                src="Assets/varsha.jpg"
                 alt="Varsha GK - Data Analyst"
             >
 
@@ -2231,403 +2249,70 @@ footer{
 
 
     <!-- =================================================
-         PROJECT 01
+         PROJECT 01: EMPLOYEE EXPENSE CLAIM AUDIT DASHBOARD
     ================================================== -->
 
     <article class="project-detail-card reveal">
-
-
-        <div class="project-number">
-            PROJECT 01
-        </div>
-
-
+        <div class="project-number">PROJECT 01 · MICROSOFT EXCEL</div>
         <div class="project-content">
-
-
-            <h3>
-                Food Recognition and Calorie Estimation
-                using Deep Learning
-            </h3>
-
-
+            <h3>Employee Expense Claim Audit Dashboard</h3>
             <p class="project-summary">
-
-                A deep learning application that accepts
-                food images, processes the image, recognizes
-                the food using CNN/ResNet and provides
-                calorie information through a Django web
-                application.
-
+                An audit dashboard that reviews employee expense claims against category policy limits,
+                checks receipt availability and risk, and surfaces claims that need an auditor’s attention.
+                The analysis combines the policy thresholds, claim-level audit data, and the finished Excel dashboard.
             </p>
 
-
-            <!-- =========================================
-                 ARCHITECTURE
-            ========================================== -->
-
-            <div class="project-block">
-
-                <h4>
-                    System Architecture
-                </h4>
-
-
-                <div class="architecture-wrap">
-
-
-                    <div class="architecture-title">
-
-                        Project 1: Food Recognition and
-                        Calorie Estimation using Deep Learning
-
-                    </div>
-
-
-                    <div class="architecture-canvas">
-
-
-                        <div class="food-top">
-
-
-                            <!-- USER -->
-
-                            <div class="arch-node">
-
-                                <strong>
-                                    USER
-                                </strong>
-
-                                Uploads food image
-
-                            </div>
-
-
-                            <div class="arch-arrow">
-                                →
-                            </div>
-
-
-                            <!-- IMAGE -->
-
-                            <div class="arch-node">
-
-                                <strong>
-                                FoodImageInput
-                                </strong>
-
-                                JPG / PNG
-
-                            </div>
-
-
-                            <div class="arch-arrow">
-                                →
-                            </div>
-
-
-                            <!-- WEB -->
-
-                            <div class="arch-node">
-
-                                <strong>
-                                    Web Interface
-                                </strong>
-
-                                Django
-
-                            </div>
-
-
-                            <div class="arch-arrow">
-                                →
-                            </div>
-
-
-                            <!-- SERVER -->
-
-                            <div class="arch-group food-server">
-
-
-                                <div class="arch-group-title">
-
-                                    Django / Python
-                                    Application Server
-
-                                </div>
-
-
-                                <div class="arch-flow">
-
-
-                                    <!-- PREPROCESSING -->
-
-                                    <div class="arch-node">
-
-                                        <strong>
-                                            Image
-                                            Preprocessing
-                                        </strong>
-
-                                        Resize<br>
-
-                                        Normalize<br>
-
-                                        Augment
-
-                                    </div>
-
-
-                                    <div class="arch-arrow">
-                                        →
-                                    </div>
-
-
-                                    <!-- MODEL -->
-
-                                    <div class="arch-node">
-
-                                        <strong>
-                                            Deep Learning
-                                            Model
-                                        </strong>
-
-                                        CNN / ResNet
-
-                                    </div>
-
-
-                                    <div class="arch-arrow">
-                                        →
-                                    </div>
-
-
-                                    <!-- RECOGNITION -->
-
-                                    <div class="arch-node">
-
-                                        <strong>
-                                            Food Recognition
-                                        </strong>
-
-                                        Classification
-
-                                    </div>
-
-
-                                    <div class="arch-arrow">
-                                        →
-                                    </div>
-
-
-                                    <!-- CALORIE -->
-
-                                    <div class="arch-node">
-
-                                        <strong>
-                                            Calorie
-                                            Estimation
-                                        </strong>
-
-                                        Nutrition lookup
-
-                                    </div>
-
-
-                                </div>
-
-
-                                <!-- DATABASES -->
-
-                                <div class="food-data-row">
-
-
-                                    <div class="arch-db">
-
-                                        <span>
-
-                                            <strong>
-                                                Food Dataset
-                                            </strong>
-
-                                            <br>
-
-                                            Food Images
-
-                                        </span>
-
-                                    </div>
-
-
-                                    <div class="arch-db">
-
-                                        <span>
-
-                                            <strong>
-                                                Trained Model
-                                                Repository
-                                            </strong>
-
-                                            <br>
-
-                                            CNN / ResNet
-
-                                        </span>
-
-                                    </div>
-
-
-                                    <div class="arch-db">
-
-                                        <span>
-
-                                            <strong>
-                                                Calorie
-                                                Information
-                                            </strong>
-
-                                            <br>
-
-                                            Nutrition Data
-
-                                        </span>
-
-                                    </div>
-
-
-                                </div>
-
-
-                                <!-- TECHNOLOGIES -->
-
-                                <div class="arch-support">
-
-
-                                    <div class="arch-chip">
-                                        Python
-                                    </div>
-
-
-                                    <div class="arch-chip">
-                                        Django
-                                    </div>
-
-
-                                    <div class="arch-chip">
-                                        Computer Vision
-                                    </div>
-
-
-                                    <div class="arch-chip">
-                                        CNN
-                                    </div>
-
-
-                                    <div class="arch-chip">
-                                        ResNet
-                                    </div>
-
-
-                                    <div class="arch-chip">
-                                        ~92% Accuracy
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-
-
-                            <div class="arch-arrow">
-                                →
-                            </div>
-
-
-                            <!-- RESULT -->
-
-                            <div class="arch-node">
-
-                                <strong>
-                                    Result /
-                                    Web Output
-                                </strong>
-
-                                Food name +
-                                calorie information
-
-                            </div>
-
-
-                            <div class="arch-arrow">
-                                →
-                            </div>
-
-
-                            <!-- USER -->
-
-                            <div class="arch-node">
-
-                                <strong>
-                                    USER
-                                </strong>
-
-                                Views result
-
-                            </div>
-
-
-                        </div>
-
-
-                        <!-- NOTES -->
-
-                        <div class="arch-notes">
-
-
-                            <div class="arch-note">
-
-                                <h5>
-                                    Processing Flow
-                                </h5>
-
-                                Image →
-                                preprocessing →
-                                CNN / ResNet →
-                                food classification →
-                                calorie estimation →
-                                web result.
-
-                            </div>
-
-
-                            <div class="arch-note">
-
-                                <h5>
-                                    Limitations
-                                </h5>
-
-                                Image quality,
-                                food appearance and
-                                similar food classes
-                                can affect recognition.
-
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
+            <div class="expense-kpis" aria-label="Dashboard summary metrics">
+                <div class="expense-kpi"><span>Total claims</span><strong>10</strong></div>
+                <div class="expense-kpi"><span>Total expenses</span><strong>₹53,200</strong></div>
+                <div class="expense-kpi"><span>High-risk claims</span><strong>4</strong></div>
+                <div class="expense-kpi"><span>Requiring review</span><strong>4</strong></div>
             </div>
 
+            <div class="project-block">
+                <h4>Audit snapshot</h4>
+                <div class="expense-dashboard-grid">
+                    <div class="expense-panel">
+                        <h5>Expenses by category</h5>
+                        <div class="expense-row"><span>Hotel</span><strong>₹33,500</strong><i style="--bar:100%"></i></div>
+                        <div class="expense-row"><span>Travel</span><strong>₹16,200</strong><i style="--bar:48.4%"></i></div>
+                        <div class="expense-row"><span>Food</span><strong>₹3,500</strong><i style="--bar:10.5%"></i></div>
+                        <p class="expense-note">Policy limits: Hotel ₹10,000 · Travel ₹5,000 · Food ₹2,000 per claim.</p>
+                    </div>
+                    <div class="expense-panel">
+                        <h5>Claims to review</h5>
+                        <ul class="expense-exceptions">
+                            <li><b>CLM002 · Varsha</b><span>Missing receipt · ₹1,800</span></li>
+                            <li><b>CLM003 · Arjun</b><span>Hotel exceeds policy · ₹12,000</span></li>
+                            <li><b>CLM007 · Tony</b><span>Missing receipt and travel exceeds policy · ₹8,000</span></li>
+                            <li><b>CLM010 · Bruce</b><span>Hotel exceeds policy · ₹15,000</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="expense-note">The source audit marks 7 claims within policy and 3 as exceeding a policy limit. Two claims have missing receipts. Risk and review status should be read with the claim-level audit remarks.</p>
+            </div>
 
-           
+            <div class="project-block">
+                <h4>Project files</h4>
+                <p class="expense-note">Open or download the source policy, claim audit data, and completed dashboard workbook.</p>
+                <div class="expense-file-grid">
+                    <a class="expense-file" href="policy.xlsx" download><span>POLICY RULES</span><strong>policy.xlsx</strong><small>Category-level spending limits</small></a>
+                    <a class="expense-file" href="audi.xlsx" download><span>CLAIM AUDIT DATA</span><strong>audi.xlsx</strong><small>Claim detail, audit flags, and pivot summaries</small></a>
+                    <a class="expense-file" href="EMPLOYEE%20EXPENSE%20CLAIM%20AUDIT%20DASHBOARD.xlsx" download><span>COMPLETED DASHBOARD</span><strong>EMPLOYEE EXPENSE CLAIM AUDIT DASHBOARD.xlsx</strong><small>Summary metrics and dashboard workbook</small></a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <h4>Audit workflow</h4>
+                <div class="module-grid">
+                    <div class="module">Policy threshold lookup</div>
+                    <div class="module">Receipt availability review</div>
+                    <div class="module">Duplicate and risk checks</div>
+                    <div class="module">Exception triage and resolution</div>
+                </div>
+            </div>
+        </div>
     </article>
-
 
 
     <!-- =================================================
@@ -4563,34 +4248,22 @@ const portfolioNarration = `
 
 Hello, welcome to Varsha GK's Data Analyst portfolio.
 
-The first project is Food Recognition and Calorie
-Estimation using Deep Learning.
+The first project is the Employee Expense Claim Audit Dashboard.
 
-The user uploads a food image through the Django
-web interface.
+It combines employee claim records with category policy limits
+and highlights claims requiring review.
 
-The image is sent for preprocessing, including
-resizing and normalization.
+The workbook covers ten claims totaling fifty-three thousand
+and two hundred rupees. Four claims are marked high risk and
+four require review. Three claims exceed policy limits and
+two have missing receipts.
 
-The processed image is passed to a deep learning
-model using CNN or ResNet.
+The largest category is hotel expenses at thirty-three thousand
+five hundred rupees, followed by travel at sixteen thousand
+two hundred and food at three thousand five hundred.
 
-The system recognizes and classifies the food.
-
-The calorie estimation stage uses calorie and
-nutrition information.
-
-The final result is displayed through the web
-application.
-
-The project uses Python, Django, deep learning,
-CNN, ResNet and computer vision.
-
-The evaluated model achieved approximately
-ninety-two percent accuracy.
-
-The main limitations include image quality,
-food appearance and similar food classes.
+The project files include the policy rules, detailed claim audit
+data, and the completed Excel dashboard.
 
 The second project is an Online E-Learning Platform
 with Integrated AI Chatbot.
