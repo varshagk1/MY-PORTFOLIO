@@ -34,7 +34,7 @@ MY-PORTFOLIO/
 ├── index.html
 ├── README.md
 └── Assets/
-    ├── project screenshots
+    ├── project screenshots,PowerBI,Python,HTML,CSS,JAVASCRIPT,DIJANGO,OPENCV,PHP,MYSQL Projects
     ├── Excel workbooks
     ├── about-varsha-expense-audit.mp4
     └── resume.pdf
